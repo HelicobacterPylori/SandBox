@@ -1,0 +1,19 @@
+@startuml fig1
+
+skinparam classAttributeIconSize 0
+skinparam monochrome true
+skinparam shadowing false
+
+agent c [
+    クライアント
+]
+agent vm [
+    仮想webサーバ
+]
+agent db [
+    DB集約装置
+]
+c <-> vm
+vm <-> db
+
+@enduml
