@@ -5,8 +5,9 @@ Markdownを使用して、仕事に使える文書を作成する方法をメモ
 ## 前提とする環境
 
 - Windows 10
+- Chromebook
 - Visual Studio Code
-  以後の本文では、VS Codeと表記します。
+  - 以後の本文では、VS Codeと表記します。
 
 可能なら、コミットすると自動でPDFが作られる環境を作りたいですが、まだPDF化の環境が充実していない感じなので、手でPDF化します。
 
