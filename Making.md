@@ -2,14 +2,17 @@
 
 Markdownを使用して、仕事に使える文書を作成する方法をメモ。
 
-## 前提とする環境
+## 使用した環境
 
-- Windows 10
-- Chromebook
+- Windows 10[^winPc]
+- Chromebook[^chromebook]
 - Visual Studio Code
   - 以後の本文では、VS Codeと表記します。
 
 可能なら、コミットすると自動でPDFが作られる環境を作りたいですが、まだPDF化の環境が充実していない感じなので、手でPDF化します。
+
+[^winPc]: GPD Pocket
+[^chromebook]: ASUS Chromebook C223NA
 
 ### 使用するソフトウェア
 
@@ -27,9 +30,10 @@ Markdownを使用して、仕事に使える文書を作成する方法をメモ
 |名称|用途など|
 |:-----------------|:---------------|
 |Markdown All in One|Markdownの機能拡張|
-|Markdown Preview Enhanced|Markdownの機能拡張|
+|Markdown Preview Enhanced|Markdownのプレビュー表示などの機能拡張|
 |Draw.io Integration|手で汎用的な図を描く|
 |PlantUML|テキストからUMLなどの図を描く|
+|PlantUML Previewer|PlantUMLのプレビュー表示|
 |Markdown PDF|MarkdownをPDF等に変換|
 |markdownlit|Markdownのエラーをハイライト表示|
 |テキスト校正くん|Markdown中のテキストなどを校正|
@@ -108,3 +112,6 @@ markdownでは、比較的簡単なUMLなどならPlantUMLで済ませられる�
 
 - Markdown の見出しに章番号を振る方法(ついでに目次にも)
 <https://qiita.com/UKawamura/items/42f907c88686fb3be4da>
+
+- ChromeBookのVSCodeで日本語入力できるようにする
+<https://gotoblog.org/chromebook-vscode-japanese/>
