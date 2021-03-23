@@ -34,6 +34,7 @@ Markdownを使用して、仕事に使える文書を作成する方法をメモ
 |Draw.io Integration|手で汎用的な図を描く|
 |PlantUML|テキストからUMLなどの図を描く|
 |PlantUML Previewer|PlantUMLのプレビュー表示|
+|Markdown Paste|Markdownに画像を貼付け|
 |Markdown PDF|MarkdownをPDF等に変換|
 |markdownlit|Markdownのエラーをハイライト表示|
 |テキスト校正くん|Markdown中のテキストなどを校正|
