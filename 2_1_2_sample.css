@@ -1,0 +1,43 @@
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+.markdown-preview.markdown-preview {
+  // modify your style here
+  // eg: background-color: blue;
+
+  h1 {
+    counter-reset: Lv1 Lv2 Lv3;
+  }
+
+  h1:empty {
+      display:none;
+  }
+
+  h2 {
+      counter-reset: Lv2 Lv3;
+  }
+
+  h2::before{
+      counter-increment: Lv1;
+      content: counter(Lv1) ". ";
+  }
+
+  h3 {
+      counter-reset: Lv3;
+  }
+
+  h3::before{
+      counter-increment: Lv2;
+      content: counter(Lv1) "." counter(Lv2) " ";
+  }
+
+  h4 {
+    // counter-reset: Lv3;
+  }
+
+  h4::before{
+      counter-increment: Lv3;
+      content: counter(Lv1) "." counter(Lv2) "."counter(Lv3) " ";
+  }
+
+}
