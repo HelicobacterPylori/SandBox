@@ -1,6 +1,8 @@
-# MarkDown Documentation
+# Markdownで仕事用の文書を作る
 
 Markdownを使用して、仕事に使える文書を作成する方法をメモ。
+
+<div style="page-break-before:always"></div>
 
 ## 使用した環境
 
@@ -29,15 +31,15 @@ Markdownを使用して、仕事に使える文書を作成する方法をメモ
 
 |名称|用途など|
 |:-----------------|:---------------|
-|Markdown All in One|Markdownの機能拡張|
-|Markdown Preview Enhanced|Markdownのプレビュー表示などの機能拡張|
-|Draw.io Integration|手で汎用的な図を描く|
-|PlantUML|テキストからUMLなどの図を描く|
-|PlantUML Previewer|PlantUMLのプレビュー表示|
-|Markdown Paste|Markdownに画像を貼付け|
-|Markdown PDF|MarkdownをPDF等に変換|
-|markdownlit|Markdownのエラーをハイライト表示|
-|テキスト校正くん|Markdown中のテキストなどを校正|
+|`Markdown All in One`|Markdownの機能拡張|
+|`Markdown Preview Enhanced`|Markdownのプレビュー表示などの機能拡張|
+|`Draw.io Integration`|手で汎用的な図を描く|
+|`PlantUML`|テキストからUMLなどの図を描く|
+|`PlantUML Previewer`|PlantUMLのプレビュー表示|
+|`Markdown Paste`|Markdownに画像を貼付け|
+|`Markdown PDF`|MarkdownをPDF等に変換|
+|`markdownlit`|Markdownのエラーをハイライト表示|
+|`テキスト校正くん`|Markdown中のテキストなどを校正|
 
 <div style="page-break-before:always"></div>
 
@@ -45,13 +47,77 @@ Markdownを使用して、仕事に使える文書を作成する方法をメモ
 
 ### CSSの調整
 
-#### 固い見た目にする
+さっとメモ的に使うだけならデフォルトで全然問題ないのですが、多少とも仕事で点検に出すような文書とするため、`Markdown Preview Enhanced`のCSSを調整します。
 
->>>フォントとフォントサイズなどの指定
+具体的には、`Markdown Preview Enhanced:Customize Css`を実行すると次のように`style.less`が表示されるので、７行目に相当する箇所に、以降の各章で挙げる必要な設定を追加していきます。
 
-#### 見出しに番号を付ける
+````css {.line-numbers}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
 
-@import "2_1_2.md"
+.markdown-preview.markdown-preview {
+  // modify your style here
+  // eg: background-color: blue;
+
+}
+````
+
+#### 文書の見た目を整える
+
+私は`h1`を文章タイトルとし、実際の文章は`h2`から書くようにしています。そのため、次の設定により`h1`はセンタリングし、`h2`〜`h6`のフォントサイズは本文と同じフォントサイズに戻しています。
+
+```css {.line-numbers}
+  h1 {
+    text-align: center;
+  }
+
+  h2, h3, h4, h5, h6 {
+    font-size:initial;
+  }
+```
+
+また各段落の先頭は必ず1文字字下げするよう、次の設定を行っています。
+
+```css {.line-numbers}
+  p {
+    text-indent: 1em;
+  }
+```
+
+#### 見出しに項番を付ける
+
+文書が、ある程度大きく、またある程度の構造を持つ場合、自動で見出しに項番がついてくれると助かります。
+
+VS Codeの機能拡張で可能なものもありましたが、使い勝手がいまいちだったので、勉強も兼ねてCSSで実現。とりあえず`h2`〜`h4`に自動で項番を付けます。
+
+```css {.line-numbers}
+  h1 {
+    counter-reset: Lv1 Lv2 Lv3;
+  }
+
+  h2 {
+    counter-reset: Lv2 Lv3;
+  }
+
+  h3 {
+    counter-reset: Lv3;
+  }
+
+  h2::before{
+    counter-increment: Lv1;
+    content: counter(Lv1) ". ";
+  }
+
+  h3::before{
+    counter-increment: Lv2;
+    content: counter(Lv1) "." counter(Lv2) " ";
+  }
+
+  h4::before{
+    counter-increment: Lv3;
+    content: counter(Lv1) "." counter(Lv2) "."counter(Lv3) " ";
+  }
+```
 
 #### ページフォーマットを使う
 
@@ -66,6 +132,7 @@ Markdownを使用して、仕事に使える文書を作成する方法をメモ
 ## 図について
 
 markdownでは、比較的簡単なUMLなどならPlantUMLで済ませられるでしょうが、実際にはPlantUMLでは描けない図もあります。
+
 今のところそうした図はDraw.ioしかない気がします。
 （もしくは、諦めて別に作成した図を張る）
 
