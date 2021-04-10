@@ -86,21 +86,21 @@ VS Codeの機能拡張で可能なものもありましたが、使い勝手が�
 `h3`、`h4`の見出し自身と、`h2`、`h3`、`h4`に続く`p`、`ol`、`nl`、`pre`、`table`を自動で字下げします。
 
 ```css {.line-numbers}
-  h2~p, h2~ol, h2~nl, h2~pre, h2~table {
+  h2~p, h2~ul, h2~ol, h2~pre, h2~table {
     margin-left: 1em;
   }
 
   h3 {
       margin-left: 1em;
   }
-  h3~p, h3~ol, h3~nl, h3~pre, h3~table {
+  h3~p, h3~ul, h3~ol, h3~pre, h3~table {
     margin-left: 2em;
   }
 
   h4 {
     margin-left: 2em;
   }
-  h4~p, h4~ol, h4~nl, h4~pre, h4~table {
+  h4~p, h4~ul, h4~ol, h4~pre, h4~table {
     margin-left: 3em;
   }
 ```
